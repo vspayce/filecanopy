@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canopy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="bar">
+    <div class="brand"><span class="leaf">🌿</span> Canopy</div>
+    <div id="places" class="group"></div>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search every file…" autocomplete="off" spellcheck="false" />
+      <div id="results" hidden></div>
+    </div>
+    <div class="group">
+      <button id="layout" title="Grow branches to the right or downward">→ Right</button>
+      <button id="hidden" title="Show hidden and system files">Hidden: off</button>
+      <button id="fit" title="Fit everything in view (F)">Fit</button>
+    </div>
+    <div id="status" title="Canopy keeps its own index of your drives, on this PC only"></div>
+  </header>
+
+  <main id="viewport">
+    <div id="world">
+      <svg id="links" width="1" height="1"></svg>
+    </div>
+    <div id="hint">
+      Click a folder to open it beside its parent. <b>Alt</b>-click opens another branch.
+      <b>Ctrl</b>-click selects across folders. Drag files anywhere, even out to other apps.
+      Drag the background to move around, <b>Ctrl</b>+wheel to zoom.
+    </div>
+  </main>
+
+  <div id="menu" hidden></div>
+  <div id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
