@@ -36,3 +36,32 @@ jobs:
         with:
           name: Canopy portable exe
           path: src-tauri/target/release/canopy.exe
+
+  cli:
+    name: Terminal version (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: cli
+
+      - name: Test
+        run: cargo test --manifest-path cli/Cargo.toml
+
+      - name: Build
+        run: cargo build --release --manifest-path cli/Cargo.toml
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: canopy-cli ${{ runner.os }}
+          path: |
+            cli/target/release/canopy-cli.exe
+            cli/target/release/canopy-cli
