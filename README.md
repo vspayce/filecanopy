@@ -31,6 +31,15 @@ Rust, Node 20+, then `npm install`, `npx tauri icon app-icon.png`, `npx tauri bu
 The interface is plain HTML/JS in `ui/` and also opens in a browser with sample
 folders, for working on the look.
 
+## In the terminal
+
+`canopy-cli` is the same canvas drawn in text, for Windows Terminal, PowerShell,
+macOS Terminal and SSH. The top line numbers every folder on your path;
+**Space + number** jumps back to it, **Ctrl+Home/End** goes to either end, and
+**?** lists the rest. Each push also builds it: download **canopy-cli Windows**
+(or macOS / Linux) from the latest run under **Actions**. Details and a shell
+hand-off snippet are in [docs/terminal-version.md](docs/terminal-version.md).
+
 ## Next ideas
 
 - Read the NTFS master file table and change journal directly (how "Everything"
